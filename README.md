@@ -1,6 +1,6 @@
 # ML1 Examen Aplicado — Pineda, Paloma
 
-Repositorio del examen aplicado de Machine Learning I. **Estado actual: en progreso** (entorno configurado, dataset seleccionado, analisis exploratorio, preprocesamiento sin leakage, PCA, K-Means y modelado supervisado con validacion cruzada completos; diagnostico del mejor modelo, justificacion, conclusiones ejecutivas y video se agregan en etapas siguientes).
+Repositorio del examen aplicado de Machine Learning I. **Estado actual: en progreso** (entorno configurado, dataset seleccionado, analisis exploratorio, preprocesamiento sin leakage, PCA, K-Means, modelado supervisado con validacion cruzada, diagnostico del mejor modelo, justificacion y conclusiones ejecutivas completos; solo el video de presentacion queda pendiente).
 
 ## Dataset seleccionado
 
@@ -10,7 +10,7 @@ Repositorio del examen aplicado de Machine Learning I. **Estado actual: en progr
 - **Observaciones:** 20.640 filas, 8 variables predictoras numericas + 1 objetivo
 - **Objetivo:** `MedHouseValue`, valor mediano de vivienda en cientos de miles de dolares
 
-Ver el detalle completo en [ml1_examen_aplicado.ipynb](ml1_examen_aplicado.ipynb): carga inicial, analisis exploratorio, division train/test y preprocesamiento sin leakage (`ColumnTransformer`), PCA, K-Means y modelado supervisado (Ridge y Random Forest) con `GridSearchCV`. Los graficos generados quedan en [figures](figures/) y la tabla comparativa de modelos en [results/model_comparison.csv](results/model_comparison.csv).
+Ver el detalle completo en [ml1_examen_aplicado.ipynb](ml1_examen_aplicado.ipynb): carga inicial, analisis exploratorio, division train/test y preprocesamiento sin leakage (`ColumnTransformer`), PCA, K-Means, modelado supervisado (Ridge y Random Forest) con `GridSearchCV`, diagnostico del mejor modelo, justificacion y conclusiones ejecutivas. Los graficos generados quedan en [figures](figures/) y la tabla comparativa de modelos en [results/model_comparison.csv](results/model_comparison.csv).
 
 ## Metodologia
 
@@ -20,10 +20,10 @@ Los datos se separan en train/test (80/20, `random_state=42`) antes de ajustar c
 
 | Modelo | RMSE | MAE | R2 | MAPE (%) | Tiempo entrenamiento (s) |
 |---|---:|---:|---:|---:|---:|
-| Random Forest | 0.5045 | 0.3271 | 0.8058 | 18.8549 | 102.8226 |
-| Ridge | 0.7456 | 0.5332 | 0.5758 | 31.9522 | 3.2978 |
+| Random Forest | 0.5045 | 0.3271 | 0.8058 | 18.8549 | 126.7115 |
+| Ridge | 0.7456 | 0.5332 | 0.5758 | 31.9522 | 4.7335 |
 
-El mejor modelo por RMSE es Random Forest. El diagnostico detallado (residuales, importancia de variables, observaciones con mayor error) y la justificacion del modelo seleccionado se agregan en la etapa siguiente.
+El mejor modelo por RMSE es Random Forest. Las cinco variables mas importantes segun el modelo son `MedInc`, `AveOccup`, `Latitude`, `Longitude` y `HouseAge`. El diagnostico completo (residuales, importancia de variables, observaciones con mayor error), la justificacion del modelo y las conclusiones ejecutivas estan documentados en las secciones 9-11 del notebook.
 
 ## Entorno de trabajo
 
@@ -66,11 +66,12 @@ El dataset actual no requiere autenticacion, pero el proyecto deja preparada una
 - Se agrega la seccion "8. Modelos supervisados con validacion cruzada": `GridSearchCV` (5 folds) para Ridge y Random Forest, metricas RMSE/MAE/R2/MAPE sobre test y exportacion de la tabla comparativa a `results/model_comparison.csv`.
 - Notebook ejecutado de punta a punta sin errores; graficos nuevos (`pca_scree_plot.png`, `pca_pc1_pc2.png`, `kmeans_elbow_silhouette.png`, `kmeans_clusters_pca.png`) exportados a `figures/`.
 - Mejor modelo por RMSE en test: Random Forest (RMSE=0.5045, R2=0.8058) frente a Ridge (RMSE=0.7456, R2=0.5758).
+- Se agrega la seccion "9. Diagnostico del mejor modelo e interpretacion": grafico real vs. predicho, histograma de residuales, importancia de variables (`MedInc`, `AveOccup`, `Latitude`, `Longitude`, `HouseAge` como top 5) y las diez observaciones con mayor error absoluto; graficos exportados a `best_model_predictions_residuals.png` y `best_model_feature_importance.png` en `figures/`.
+- Se agrega la seccion "10. Justificacion del modelo seleccionado": explicacion generada en Markdown a partir de las metricas de train/test realmente calculadas, cubriendo comparacion frente a Ridge, diagnostico de sobreajuste y viabilidad de negocio.
+- Se agrega la seccion "11. Conclusiones ejecutivas": sintesis dinamica (>300 palabras) de EDA, PCA/K-Means (5 componentes con 90.16% de varianza acumulada; K optimo=4), modelado supervisado, limitaciones, recomendaciones y trabajo futuro.
+- Notebook ejecutado de punta a punta sin errores.
 
 ### Proximos pasos pendientes
-- Diagnostico del mejor modelo: residuales, importancia de variables y observaciones con mayor error absoluto.
-- Justificacion del modelo seleccionado.
-- Conclusiones ejecutivas.
 - Video de presentacion.
 
 ## Declaracion de uso de IA
