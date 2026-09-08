@@ -45,10 +45,6 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-### Hugging Face (para etapas futuras)
-
-El dataset actual no requiere autenticacion, pero el proyecto deja preparada una cuenta y token de Hugging Face para posibles pasos futuros (ver seccion 1 de [ml1_examen_aplicado.ipynb](ml1_examen_aplicado.ipynb)). El token se guarda localmente en un archivo `.env` con la variable `HF_TOKEN`, el cual **no se sube a git** (ver `.gitignore`).
-
 ## Bitacora de trabajo
 
 ### 2026-09-06
