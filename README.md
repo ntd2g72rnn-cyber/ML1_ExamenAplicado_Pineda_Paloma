@@ -1,5 +1,7 @@
 # ML1 Examen Aplicado — Pineda, Paloma
 
+**Repositorio:** https://github.com/ntd2g72rnn-cyber/ML1_ExamenAplicado_Pineda_Paloma
+
 Repositorio del examen aplicado de Machine Learning I. **Estado actual: en progreso** (entorno configurado, dataset seleccionado, analisis exploratorio, preprocesamiento sin leakage, PCA, K-Means, modelado supervisado con validacion cruzada, diagnostico del mejor modelo, justificacion y conclusiones ejecutivas completos; solo el video de presentacion queda pendiente).
 
 ## Dataset seleccionado
