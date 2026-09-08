@@ -2,7 +2,9 @@
 
 **Repositorio:** https://github.com/ntd2g72rnn-cyber/ML1_ExamenAplicado_Pineda_Paloma
 
-Repositorio del examen aplicado de Machine Learning I. **Estado actual: en progreso** (entorno configurado, dataset seleccionado, analisis exploratorio, preprocesamiento sin leakage, PCA, K-Means, modelado supervisado con validacion cruzada, diagnostico del mejor modelo, justificacion y conclusiones ejecutivas completos; solo el video de presentacion queda pendiente).
+Repositorio del examen aplicado de Machine Learning I. **Estado actual: completo** (entorno configurado, dataset seleccionado, analisis exploratorio, preprocesamiento sin leakage, PCA, K-Means, modelado supervisado con validacion cruzada, diagnostico del mejor modelo, justificacion, conclusiones ejecutivas y video de presentacion).
+
+**Video de presentacion:** https://drive.google.com/file/d/1eOV0VCSMdVNVDyfR8Qwgj_084ZD0FTL2/view
 
 ## Dataset seleccionado
 
@@ -30,6 +32,7 @@ El mejor modelo por RMSE es Random Forest. Las cinco variables mas importantes s
 ## Entorno de trabajo
 
 Este proyecto usa [uv](https://docs.astral.sh/uv/) para gestionar el entorno Python.
+
 
 ```bash
 uv sync
@@ -69,8 +72,7 @@ jupyter notebook
 - Se agrega la seccion "11. Conclusiones ejecutivas": sintesis dinamica (>300 palabras) de EDA, PCA/K-Means (5 componentes con 90.16% de varianza acumulada; K optimo=4), modelado supervisado, limitaciones, recomendaciones y trabajo futuro.
 - Notebook ejecutado de punta a punta sin errores.
 
-### Proximos pasos pendientes
-- Video de presentacion.
+- Se agrega el video de presentacion: https://drive.google.com/file/d/1eOV0VCSMdVNVDyfR8Qwgj_084ZD0FTL2/view
 
 ## Declaracion de uso de IA
 
